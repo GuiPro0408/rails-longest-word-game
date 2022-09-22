@@ -1,0 +1,10 @@
+<h1>Result</h1>
+
+<p>Attempt : <%= @word %></p>
+<p>Grid : <%= @grid %></p>
+<p>Translation : <%= @result[:translation] %></p>
+<p>Time Taken : <%= @result[:time].round(1) %></p>
+<p>Score : <%= @result[:score].round(1) %></p>
+<p>Attempt : <%= @result[:message] %></p>
+
+<%= link_to("Restart the Game", new_path, class: "btn btn-danger") %>

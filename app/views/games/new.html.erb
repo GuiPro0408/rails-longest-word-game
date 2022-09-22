@@ -1,0 +1,17 @@
+<h1>Make a word</h1>
+
+<div class="container d-flex mb-5">
+  <% @random_letter.each do |letter| %>
+    <div class="bg-dark p-3 me-3 text-light">
+      <span class = "fw-bold"><%= letter %></span>
+    </div>
+  <% end %>
+</div>
+
+<form action="/score" method="post" data-turbo="false" class = "d-flex">
+  <input name="word" type="text" placeholder="Write your longest word" class = "form-control"/>
+  <input type="hidden" name="grid" value="<%= @random_letter %>">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="submit" class = "btn btn-primary" Value = "Search">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
